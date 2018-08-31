@@ -44,7 +44,6 @@ export default store => next => action => {
     root,
     endpoint,
     method,
-    types,
     query,
     payload
   );
