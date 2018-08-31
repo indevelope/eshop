@@ -12,7 +12,9 @@ import { Container } from 'reactstrap';
 
 import Layout from '~/src/components/shared/Layout';
 
-store.dispatch(fetchProducts());
+store
+  .dispatch(fetchProducts())
+  .then((response) => console.log('request done', response.body));
 
 const App = () => {
   return (

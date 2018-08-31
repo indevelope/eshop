@@ -13,7 +13,7 @@ export default (state = INITIAL_STATE, action) => {
       return Object.assign({}, INITIAL_STATE, { isError: true });
 
     case 'FETCH_PRODUCTS_SUCCESS': 
-      return Object.assign({}, INITIAL_STATE, { entries: action.res });
+      return Object.assign({}, INITIAL_STATE, { entries: action.response.body });
 
       default:
       return state;
