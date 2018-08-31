@@ -25,7 +25,7 @@ const historyCb = (location, action) => {
   };
 
   routes.some((route) => {
-    const match = matchPath(location.pathname, route).isExact
+    const match = matchPath(location.pathname, route);
 
     if (match)
     {
