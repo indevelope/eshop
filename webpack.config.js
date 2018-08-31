@@ -1,9 +1,12 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
+  target: 'node',
   entry: {
-    bundle: './index'
+    // bundle: './index',
+    serverApp: './serverApp'
   },
 
   devServer: {
@@ -13,7 +16,8 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/assets/'
+    publicPath: '/assets/',
+    libraryTarget: 'commonjs'
   },
 
   resolve: {
@@ -31,8 +35,13 @@ module.exports = {
       },
       {
         test: /\.css/,
-        loaders: ['style-loader', 'css-loader']
+        loader: 'ignore-loader'
+        //loaders: ['style-loader', 'css-loader']
       }
     ]
-  }
+  },
+
+  plugins: [
+    new webpack.DefinePlugin({ "global.GENTLY": false })
+  ],
 };

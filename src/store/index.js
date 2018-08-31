@@ -6,7 +6,7 @@ import reducers from '~/src/reducers';
 
 const middleware = [APIMiddleware];
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = compose;
 const store = createStore(
   combineReducers(reducers), 
   composeEnhancers(
