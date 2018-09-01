@@ -23,7 +23,7 @@ const historyCb = (location, action) => {
   };
 
   routes.some((route) => {
-    const match = matchPath(location.pathname, route).isExact
+    const match = matchPath(location.pathname, route);
 
     if (match)
     {
@@ -48,9 +48,10 @@ const RouteWithSubroutes = ({ route, key }) => (
 const App = () => {
   return (
     <Provider store={store}>
-      <Layout>
-        <Container>
-          <Router history={history}>
+      
+      <Router history={history}>
+        <Layout>
+          <Container>
             <Switch>
               {
                 routes.map((route, key) => (
@@ -58,9 +59,9 @@ const App = () => {
                 ))
               }
             </Switch>
-          </Router>
-        </Container>
-      </Layout>   
+          </Container>
+        </Layout>  
+      </Router> 
     </Provider>
   );
 };

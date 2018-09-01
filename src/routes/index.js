@@ -14,5 +14,8 @@ export default [
     prepareData: (store, query, params, routes) => {
       return store.dispatch(fetchProducts());
     }
+  },
+  {
+    render: () => <div>404 Not found</div>
   }
 ];

@@ -10,6 +10,8 @@ import {
   NavLink,
 } from 'reactstrap';
 
+import { Link } from 'react-router-dom';
+
 import CartButton from './CartButton';
 
 import './index.css';
@@ -32,12 +34,12 @@ class Layout extends Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">EShop</NavbarBrand>
+          <Link to="/"><NavbarBrand tag="div">EShop</NavbarBrand></Link>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/cart/"><CartButton /></NavLink>
+                <Link to="/cart/"><CartButton /></Link>
               </NavItem>
             </Nav>
           </Collapse>
