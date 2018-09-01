@@ -4,8 +4,6 @@ import { Provider } from 'react-redux';
 
 import store from '~/src/store';
 
-import { fetchProducts } from '~/src/actions/products';
-
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container } from 'reactstrap';
 
@@ -38,6 +36,8 @@ const historyCb = (location, action) => {
 
   prepareData(store, state);
 };
+
+history.listen(historyCb);
 
 historyCb(window.location, 'PUSH');
 
