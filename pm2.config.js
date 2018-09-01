@@ -13,7 +13,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:indevelope/eshop.git',
       'post-deploy': 'npm install && npm run build && pm2 startOrRestart pm2.config.js --env production',
-      path: '/home/eshop/eshop/current',
+      path: '/home/eshop/eshop',
       ssh_options: 'StrictHostKeyChecking=no'
     }
   }
